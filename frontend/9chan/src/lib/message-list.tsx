@@ -15,6 +15,9 @@ class MessageList extends React.Component<Props, Messages> {
     }
     this.getMessages()
     this.onClick = this.onClick.bind(this);
+
+    const source = new EventSource('/stream');
+    source.addEventListener('message', _ => this.updateMessages())
   }
 
   getMessages() {
@@ -22,8 +25,15 @@ class MessageList extends React.Component<Props, Messages> {
     req().then(data => data.forEach(m => this.addMessage(m)))
   }
 
+  updateMessages() {
+    const req = (): Promise<Array<MessageData>> => fetch("/api/messages").then((x) => x.json());
+    this.setState({
+      messages: []
+    })
+    req().then(data => data.forEach(m => this.addMessage(m)))
+  }
+
   addMessage(m: MessageData) {
-    console.log(m);
     let newMessages = this.state.messages.concat();
     newMessages.push(m);
     this.setState({
