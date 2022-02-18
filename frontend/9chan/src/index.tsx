@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MessageList from './lib/message-list';
+import ChannelList from './lib/channel-list'
 
 ReactDOM.render(
   <React.StrictMode>
+    <ChannelList />
     <MessageList />
   </React.StrictMode>,
   document.getElementById('root')
