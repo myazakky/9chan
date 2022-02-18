@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'sinatra/sse'
 require 'sqlite3'
 require_relative 'settings'
+require 'ld-eventsource'
 
 class Server < Sinatra::Base
   include Sinatra::SSE
@@ -49,6 +50,22 @@ class Server < Sinatra::Base
         out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name": "黒宮倶楽部"}.to_json if pre_messages != messages
         pre_messages = messages
       end
+    end
+  end
+
+  def mkevent(url, out)
+    SSE::Client.new(url) do |c|
+      c.on_event do |e|
+        out.push :data => e.data
+      end
+    end
+  end
+
+  subscribes = ['http://localhost:9292/stream']
+
+  get '/api/subscribes/stream' do
+    sse_stream do |out|
+      clients = subscribes.map { mkevent(_1, out) }
     end
   end
 end
