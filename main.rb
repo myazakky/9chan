@@ -42,6 +42,20 @@ class Server < Sinatra::Base
     return result.to_json
   end
 
+  get '/api/messages/from/:n' do
+    n = params['n'].to_i
+
+    result = (db.execute "select * from messages")
+
+    return [].to_json if result.size <= n
+
+    result = result[n..].map do |pair|
+      {"id" => pair[0], "content" => pair[1]}
+    end
+
+    return result.to_json
+  end
+
   get '/stream' do
     sse_stream do |out|
       pre_messages = db.execute "select * from messages"

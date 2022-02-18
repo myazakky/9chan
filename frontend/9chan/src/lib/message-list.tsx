@@ -26,10 +26,8 @@ class MessageList extends React.Component<Props, Messages> {
   }
 
   updateMessages() {
-    const req = (): Promise<Array<MessageData>> => fetch("/api/messages").then((x) => x.json());
-    this.setState({
-      messages: []
-    })
+    const latest_id = this.state.messages[this.state.messages.length - 1].id
+    const req = (): Promise<Array<MessageData>> => fetch("/api/messages/from/" + latest_id).then((x) => x.json());
     req().then(data => data.forEach(m => this.addMessage(m)))
   }
 
@@ -49,7 +47,7 @@ class MessageList extends React.Component<Props, Messages> {
     }
 
     const req = (): Promise<MessageData> => fetch("/api/messages", options).then((x) => x.json());
-    req().then(m => this.addMessage(m))
+    req()
   }
 
   render() {
