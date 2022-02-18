@@ -8,7 +8,7 @@ db = SQLite3::Database.new(DB_NAME)
 
 db.execute <<-SQL
   create table messages (
-    content text,
-    id int
+    id integer primary key,
+    content text
   );
 SQL

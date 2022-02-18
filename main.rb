@@ -25,7 +25,7 @@ class Server < Sinatra::Base
     request.body.rewind
     data = JSON.parse request.body.read
 
-    db.execute "insert into messages values (?, ?)", [data['content'], 0]
+    db.execute "insert into messages(content) values (?)", [data['content']]
 
     return data.to_json
   end
@@ -36,7 +36,7 @@ class Server < Sinatra::Base
     result = db.execute "select * from messages"
 
     result = result.map do |pair|
-      {"content" => pair[0], "id" => pair[1]}
+      {"id" => pair[0], "content" => pair[1]}
     end
 
     return result.to_json
