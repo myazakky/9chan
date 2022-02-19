@@ -26,8 +26,13 @@ class MessageList extends React.Component<Props, Messages> {
   }
 
   updateMessages() {
-    const latest_id = this.state.messages[this.state.messages.length - 1].id
+    let latest_id: number
+    
+    if (this.state.messages.length > 0) {
+      latest_id = this.state.messages[this.state.messages.length - 1].id
+    } else { latest_id = 0}
     const req = (): Promise<Array<MessageData>> => fetch("/api/messages/from/" + latest_id).then((x) => x.json());
+
     req().then(data => data.forEach(m => this.addMessage(m)))
   }
 
