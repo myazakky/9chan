@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+DB_NAME = '9chan.sqlite3'
+
+CHANNEL_NAME = '9chan'
+
+SUBSCRIBES = [
+  # Add subscribes url
+  # Example:
+    # 'http://10.8.0.1/stream'
+]

@@ -61,7 +61,7 @@ class Server < Sinatra::Base
       pre_messages = db.execute "select * from messages"
       EM.add_periodic_timer(1) do
         messages = db.execute "select * from messages"
-        out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name" => "黒宮倶楽部", "url" => "http://localhost:9292/"}.to_json if pre_messages != messages
+        out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name" => CHANNEL_NAME, "url" => "http://localhost:9292/"}.to_json if pre_messages != messages
         pre_messages = messages
       end
     end
@@ -75,11 +75,9 @@ class Server < Sinatra::Base
     end
   end
 
-  subscribes = ['http://localhost:9292/stream']
-
   get '/api/subscribes/stream' do
     sse_stream do |out|
-      clients = subscribes.map { mkevent(_1, out) }
+      clients = SUBSCRIBES.map { mkevent(_1, out) }
     end
   end
 end
