@@ -50,10 +50,10 @@ cp settings.rb.example settings.rb
 テーブル作成
 ```
 mkdir -p var/9chan
-docker run -v $(pwd)/settings.rb:/opt/app/settings.rb -v $(pwd)/var/9chan:/var/9chan 9chan ruby ./models.rb
+docker run --rm -v $(pwd)/settings.rb:/opt/app/settings.rb -v $(pwd)/var/9chan:/var/9chan 9chan ruby ./models.rb
 ```
 
 走行
 ```
-docker run -it -v $(pwd)/settings.rb:/opt/app/settings.rb -v $(pwd)/var/9chan:/var/9chan -p 127.0.0.1:9292:9292 9chan
+docker run --rm -it -v $(pwd)/settings.rb:/opt/app/settings.rb -v $(pwd)/var/9chan:/var/9chan -p 127.0.0.1:9292:9292 9chan
 ```
