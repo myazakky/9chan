@@ -61,7 +61,7 @@ class Server < Sinatra::Base
       pre_messages = db.execute "select * from messages"
       EM.add_periodic_timer(1) do
         messages = db.execute "select * from messages"
-        out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name": "黒宮倶楽部"}.to_json if pre_messages != messages
+        out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name" => "黒宮倶楽部", "url" => "http://localhost:9292/"}.to_json if pre_messages != messages
         pre_messages = messages
       end
     end
