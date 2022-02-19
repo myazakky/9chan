@@ -19,6 +19,15 @@ class Server < Sinatra::Base
     send_file 'frontend/9chan/build/index.html'
   end
 
+  get '/api/channel' do
+    content_type :json
+
+    {
+      channelName: CHANNEL_NAME,
+      host: HOST
+    }.to_json
+  end
+
   post '/api/messages' do
     content_type :json
 
