@@ -77,13 +77,19 @@ class Server < Sinatra::Base
     return result.to_json
   end
 
+  data = {"date" => Time.now.to_s, "type" => "update", "display_name" => CHANNEL_NAME, "url" => "http://#{HOST}/"}
+
   get '/stream' do
     sse_stream do |out|
+      out.push :data => data.to_json
       pre_messages = db.execute "select * from messages"
+      n = 1
+
       EM.add_periodic_timer(1) do
         messages = db.execute "select * from messages"
-        out.push :data => {"date" => Time.now.to_s, "type" => "update", "display_name" => CHANNEL_NAME, "url" => "http://#{HOST}/"}.to_json if pre_messages != messages
+        out.push :data => data.to_json if (pre_messages != messages) || n % 60 == 0
         pre_messages = messages
+        n += 1
       end
     end
   end
