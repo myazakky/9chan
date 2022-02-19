@@ -52,8 +52,8 @@ class MessageList extends React.Component<Props, Messages> {
 
   render() {
     return (
-      <div className="content">
-        <div className="message-list">
+      <div className="flex flex-col h-screen w-screen">
+        <div className="h-full w-full bg-gray-200 overflow-y-scroll">
           {this.state.messages.map((msg: MessageData) => (
             (new Message(msg)).render()
           ))}

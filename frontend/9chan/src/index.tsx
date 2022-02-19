@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MessageList from './lib/message-list';
-import ChannelList from './lib/channel-list'
+import ChannelList from './lib/channel-list';
+import "tailwindcss/tailwind.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChannelList />
-    <MessageList />
+    <div className="flex">
+      <ChannelList />
+      <MessageList />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

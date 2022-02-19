@@ -33,7 +33,7 @@ class ChannelList extends React.Component<Props, Channels> {
 
   render() {
     return (
-      <div className="channel-list">
+      <div className="w-40 bg-gray-300">
         {this.state.channels.map((chan: string) => (
             <li>{chan}</li>
           ))}

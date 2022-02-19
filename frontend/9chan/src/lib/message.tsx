@@ -1,4 +1,5 @@
 import React from 'react'
+import "tailwindcss/tailwind.css";
 
 export type MessageData = {
   id: number;
@@ -12,8 +13,8 @@ class Message extends React.Component<MessageData> {
 
   render() {
     return (
-      <div className="message">
-        <p>{this.props.content}</p>
+      <div className="w-full mb-3 border-gray-300 border-b">
+        <p className="px-1">{this.props.content}</p>
       </div>
     )
   }
