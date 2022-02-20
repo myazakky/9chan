@@ -305,8 +305,8 @@ class MessageList extends React.Component<Props, Messages> {
 
   render() {
     return (
-      <div className="flex flex-col h-full w-full pt-10">
-        <div className="h-full w-full bg-gray-200 overflow-y-scroll">
+      <div className="flex flex-col h-full w-full pt-10 bg-gray-200">
+        <div className="h-full w-full overflow-y-scroll">
           {this.state.messages.map((msg: MessageData) => (
             (new Message(msg)).render()
           ))}

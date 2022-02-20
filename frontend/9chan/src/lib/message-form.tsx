@@ -32,7 +32,7 @@ class MessageForm extends React.Component<Props, Values> {
 
   render() {
     return (
-      <div className="flex bg-gray-300 py-2 pb-10">
+      <div className="flex py-2 pb-10">
         <textarea value={this.state.content}
           onChange={(e) => this.onChange(e)}
           className="flex w-full px-1 py-1 mx-1 rounded-md"
