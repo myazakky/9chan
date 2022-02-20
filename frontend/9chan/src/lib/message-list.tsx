@@ -11,7 +11,237 @@ class MessageList extends React.Component<Props, Messages> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      messages: []
+      messages: [{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },{
+        id: 0,
+        content: "こんにちは",
+        user: "nimuC",
+        icon: "http://10.1.1.1/files/img/2001_space_station.jpg"
+      },]
     }
     this.getMessages()
     this.onClick = this.onClick.bind(this);
@@ -57,7 +287,7 @@ class MessageList extends React.Component<Props, Messages> {
 
   render() {
     return (
-      <div className="flex flex-col h-full w-full">
+      <div className="flex flex-col h-full w-full pt-10">
         <div className="h-full w-full bg-gray-200 overflow-y-scroll">
           {this.state.messages.map((msg: MessageData) => (
             (new Message(msg)).render()
