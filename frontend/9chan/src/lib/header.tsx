@@ -18,7 +18,7 @@ class Header extends React.Component<Props, Channel> {
 
   render() {
       return (
-        <div className='items-center bg-gray-400 w-screen py-2 pl-10 border-b border-gray-600 fixed top-0'>
+        <div className='flex items-center bg-gray-400 w-screen py-2 pl-10 border-b border-gray-600 fixed top-0'>
           <p>{this.state.channelName}</p>
           <p>@{this.state.host}</p>
         </div>
