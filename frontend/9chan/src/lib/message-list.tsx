@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import Message, { MessageData } from './message'
 import MessageForm from './message-form';
 
@@ -8,6 +8,8 @@ type Messages = {
 }
 
 class MessageList extends React.Component<Props, Messages> {
+  scrollBottomRef: React.RefObject<HTMLDivElement>
+
   constructor(props: Props) {
     super(props)
     this.state = {
@@ -248,6 +250,22 @@ class MessageList extends React.Component<Props, Messages> {
 
     const source = new EventSource('/stream');
     source.addEventListener('message', _ => this.updateMessages())
+
+    this.scrollBottomRef = createRef<HTMLDivElement>();
+  }
+
+  scrollDown() {
+    if(this.scrollBottomRef && this.scrollBottomRef.current) {
+      this.scrollBottomRef.current.scrollIntoView();
+    }
+  }
+
+  componentDidMount() {
+    this.scrollDown()
+  }
+
+  componentDidUpdate() {
+    this.scrollDown()
   }
 
   getMessages() {
@@ -292,8 +310,8 @@ class MessageList extends React.Component<Props, Messages> {
           {this.state.messages.map((msg: MessageData) => (
             (new Message(msg)).render()
           ))}
+        <div ref={this.scrollBottomRef}/>
         </div>
-
         <MessageForm onClick={this.onClick} />
       </div>
     )
